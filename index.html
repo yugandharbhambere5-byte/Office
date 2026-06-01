@@ -16,9 +16,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Favicon to prevent 404 console errors -->
+  <link rel="icon" href="data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==">
 </head>
 
 <body>
+  <!-- Ambient floating cursor glow -->
+  <div class="cursor-glow" id="cursor-glow"></div>
 
   <!-- Navigation Bar -->
   <nav class="navbar" id="navbar">
@@ -56,19 +60,18 @@
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
+    <canvas class="hero-particles" id="hero-particles"></canvas>
     <div class="hero-bg-dots"></div>
     <div class="hero-bg-circle"></div>
     <div class="container">
       <div class="hero-content">
-        <span class="hero-tag">Welcome to my space</span>
+        <span class="hero-tag">Java Fullstack Developer</span>
         <h1>
           YUGANDHAR NANDKISHOR BHAMBERE
-          <span>Computer Science Engineer | Web Developer</span>
+          <span>Java Fullstack Developer | Frontend Developer</span>
         </h1>
         <p class="hero-intro">
-          Motivated Computer Science Engineer passionate about software development, web development, and
-          building real-world applications. I enjoy solving problems through code and creating user-friendly digital
-          solutions.
+          Motivated Java Fullstack Developer passionate about software development, frontend engineering, and building robust, scalable web applications. I specialize in Java, MySQL, and modern frontend technologies to deliver high-performance, user-friendly solutions.
         </p>
         <div class="hero-ctas">
           <!-- Opens print dialog or downloads a blank placeholder for resume -->
@@ -80,33 +83,6 @@
           </a>
         </div>
       </div>
-
-      <div class="hero-illustration">
-        <div class="dev-card">
-          <div class="dev-card-header">
-            <span class="dev-card-dot"></span>
-            <span class="dev-card-dot"></span>
-            <span class="dev-card-dot"></span>
-          </div>
-          <div class="dev-card-body">
-            <p><span class="comment">// Professional Profile</span></p>
-            <p><span class="keyword">const</span> developer = {</p>
-            <p>&nbsp;&nbsp;name: <span class="string">"Yugandhar Bhambere"</span>,</p>
-            <p>&nbsp;&nbsp;role: <span class="string">"Computer Science Engineer"</span>,</p>
-            <p>&nbsp;&nbsp;skills: [</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Java"</span>, <span class="string">"Python"</span>, <span
-                class="string">"PHP"</span>,</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"MySQL"</span>, <span class="string">"HTML/CSS/JS"</span>
-            </p>
-            <p>&nbsp;&nbsp;],</p>
-            <p>&nbsp;&nbsp;passionate: <span class="keyword">true</span>,</p>
-            <p>&nbsp;&nbsp;solveProblems: () => {</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;return <span class="string">"Elegant Solutions"</span>;</p>
-            <p>&nbsp;&nbsp;}</p>
-            <p>};</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -115,27 +91,24 @@
     <div class="container">
       <div class="section-header">
         <span class="subtitle">About Me</span>
-        <h2>Who I Am</h2>
+        <h2>Behind The Code</h2>
       </div>
 
       <div class="about-grid">
         <div class="about-image-container">
           <div class="about-image-wrapper">
-            <img src="image/WhatsApp Image 2026-06-01 at 11.35.17 AM.jpeg" alt="Yugandhar Bhambere" class="about-img">
+            <img src="image/WhatsApp%20Image%202026-06-01%20at%2011.35.17%20AM.jpeg" alt="Yugandhar Bhambere" class="about-img">
           </div>
         </div>
 
         <div class="about-content">
           <div class="about-info">
-            <h3>Passionate About Creating User-Friendly Digital Experiences</h3>
+            <h3>Passionate Java Fullstack & Frontend Developer</h3>
             <p>
-              I am a Computer Science Engineer with a strong foundation in Java, Python, PHP, MySQL, HTML, CSS,
-              JavaScript, and Data Structures. I enjoy developing websites and software applications that solve real-world
-              problems.
+              I am a Java Fullstack Developer with expertise in designing, developing, and deploying end-to-end software applications. With a solid command of Java, MySQL, HTML, CSS, JavaScript, and Data Structures, I construct secure backend databases and smooth, responsive user interfaces.
             </p>
             <p>
-              I am passionate about software development, problem-solving, and continuously learning new technologies. I
-              love building clean, functional, and user-friendly digital experiences that add value to users.
+              I am dedicated to writing clean code, solving complex problems, and creating user-friendly digital experiences. I am constantly updating my skills with modern frameworks and tools to build robust real-world solutions.
             </p>
           </div>
 
@@ -276,7 +249,7 @@
         <!-- Project 1 -->
         <div class="project-card">
           <div class="project-visual">
-            <i class="fa-solid fa-user-shield"></i>
+            <img src="image/deepfake_detection.png" alt="Deepfake Detection" class="project-img">
           </div>
           <div class="project-content">
             <div class="project-tags">
@@ -302,41 +275,17 @@
               </li>
               <li>Focused on accuracy, usability, and simple user experience.</li>
             </ul>
-            <a href="https://github.com/yugandharbhambere5-byte" target="_blank" rel="noopener noreferrer" class="project-link">
-              View Source <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <div class="project-links">
+              <a href="https://github.com/yugandharbhambere5-byte" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Source <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="https://deepfake-detection-3pme.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                Live Demo <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-          <div class="project-visual">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </div>
-          <div class="project-content">
-            <div class="project-tags">
-              <span class="project-tag">Java</span>
-              <span class="project-tag">MySQL</span>
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">CSS</span>
-            </div>
-            <h3>College Management Information System (CMIS)</h3>
-            <p class="project-description">
-              A web-based information portal designed to streamline administrative operations.
-            </p>
-            <ul class="project-bullets">
-              <li>Designed and developed a web-based college management system.</li>
-              <li>Automated student admissions process.</li>
-              <li>Managed attendance, marks, and fee records.</li>
-              <li>Generated reports for faculty and management.</li>
-              <li>Improved communication between faculty, students, management, and parents.</li>
-              <li>Optimized database performance and built a user-friendly interface.</li>
-            </ul>
-            <a href="https://github.com/yugandharbhambere5-byte" target="_blank" rel="noopener noreferrer" class="project-link">
-              View Source <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -408,8 +357,8 @@
             <div class="leadership-card">
               <i class="fa-solid fa-user-group"></i>
               <div class="leadership-card-info">
-                <h4>Committee Member</h4>
-                <p>Main College Team</p>
+                <h4>Student Representative Council</h4>
+                <p>Student Representative</p>
               </div>
             </div>
 
@@ -494,21 +443,25 @@
 
         <!-- Contact Form -->
         <div class="contact-form-container">
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+            <!-- Web3Forms Access Key - Paste your key here -->
+            <input type="hidden" name="access_key" value="92c762cc-0290-48de-bddf-827d900c0e13">
+            <input type="hidden" name="subject" value="New Portfolio Message">
+            <input type="hidden" name="from_name" value="Portfolio Contact Form">
             <div class="form-group-row">
               <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" required placeholder="Enter name">
+                <input type="text" id="name" name="name" required placeholder="Enter name">
               </div>
               <div class="form-group">
                 <label for="email">Your Email</label>
-                <input type="email" id="email" required placeholder="Enter email">
+                <input type="email" id="email" name="email" required placeholder="Enter email">
               </div>
             </div>
 
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" required placeholder="Your message here..."></textarea>
+              <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
@@ -631,31 +584,163 @@
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Basic aesthetic feedback on success
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
 
       submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
       submitBtn.disabled = true;
 
-      // Simulate form submission delay
-      setTimeout(() => {
-        submitBtn.innerHTML = 'Sent Successfully! <i class="fa-solid fa-check"></i>';
-        submitBtn.style.backgroundColor = '#22c55e'; // Green feedback color
-        submitBtn.style.color = '#ffffff';
+      // Extract form data
+      const formData = new FormData(contactForm);
+      const formObject = Object.fromEntries(formData);
+      const jsonPayload = JSON.stringify(formObject);
 
-        // Reset the form
-        contactForm.reset();
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: jsonPayload
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success === 'true' || data.success === true) {
+          submitBtn.innerHTML = 'Sent Successfully! <i class="fa-solid fa-check"></i>';
+          submitBtn.style.backgroundColor = '#22c55e'; // Green feedback color
+          submitBtn.style.color = '#ffffff';
+          contactForm.reset();
 
-        // Revert button after 3 seconds
-        setTimeout(() => {
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
-          submitBtn.style.backgroundColor = '';
-          submitBtn.style.color = '';
-        }, 3000);
-      }, 1500);
+          setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            submitBtn.style.backgroundColor = '';
+            submitBtn.style.color = '';
+          }, 3000);
+        } else {
+          // If API fails, submit standardly through form post action
+          submitBtn.innerHTML = 'Redirecting... <i class="fa-solid fa-arrow-rotate-right"></i>';
+          contactForm.submit();
+        }
+      })
+      .catch(error => {
+        console.warn('AJAX submit failed, falling back to standard browser post:', error);
+        submitBtn.innerHTML = 'Redirecting... <i class="fa-solid fa-arrow-rotate-right"></i>';
+        contactForm.submit();
+      });
     });
+
+    // 3D Interactive Mouse-Tilt Effect
+    const tiltCards = document.querySelectorAll('.skills-category, .cert-card, .leadership-card, .highlight-box, .timeline-content');
+    
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xc = rect.width / 2;
+        const yc = rect.height / 2;
+        const angleX = (yc - y) / 10; // Max tilt rotation X
+        const angleY = (x - xc) / 10; // Max tilt rotation Y
+        
+        card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-8px)`;
+        card.style.transition = 'transform 0.08s ease-out, box-shadow 0.3s ease';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+        card.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.6s ease';
+      });
+    });
+
+    // Ambient Cursor Glow Tracking
+    const cursorGlow = document.getElementById('cursor-glow');
+    document.addEventListener('mousemove', (e) => {
+      cursorGlow.style.left = e.clientX + 'px';
+      cursorGlow.style.top = e.clientY + 'px';
+      cursorGlow.style.opacity = '1';
+    });
+    
+    document.addEventListener('mouseleave', () => {
+      cursorGlow.style.opacity = '0';
+    });
+
+    // Scroll Reveal Intersection Observer
+    const revealElements = document.querySelectorAll('.project-card, .skills-category, .cert-card, .leadership-card, .highlight-box, .timeline-item, .section-header');
+    
+    // Add the reveal class initially
+    revealElements.forEach(el => el.classList.add('reveal'));
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target); // Trigger only once
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Canvas Particles Starfield Animation in Hero
+    const canvas = document.getElementById('hero-particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = Math.random() * 0.15 - 0.075;
+        this.speedY = Math.random() * 0.15 - 0.075;
+        this.opacity = Math.random() * 0.6 + 0.1;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+          this.reset();
+        }
+      }
+      draw() {
+        // Cyan-purple gradient stars
+        ctx.fillStyle = document.body.classList.contains('dark-mode') 
+          ? `rgba(6, 182, 212, ${this.opacity})` 
+          : `rgba(99, 102, 241, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    
+    for (let i = 0; i < 75; i++) {
+      particles.push(new Particle());
+    }
+    
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
   </script>
 </body>
 
