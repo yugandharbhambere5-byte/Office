@@ -74,10 +74,10 @@
           Motivated Java Fullstack Developer passionate about software development, frontend engineering, and building robust, scalable web applications. I specialize in Java, MySQL, and modern frontend technologies to deliver high-performance, user-friendly solutions.
         </p>
         <div class="hero-ctas">
-          <!-- Opens print dialog or downloads a blank placeholder for resume -->
-          <a href="resume/resume.jpeg" target="_blank" class="btn btn-primary">
-            <i class="fa-solid fa-file-arrow-down"></i> View Resume
-          </a>
+          <!-- Button to trigger View Resume modal -->
+          <button id="view-resume-btn" class="btn btn-primary">
+            <i class="fa-solid fa-file-invoice"></i> View Resume
+          </button>
           <a href="#contact" class="btn btn-secondary">
             Contact Me <i class="fa-solid fa-arrow-right-to-bracket"></i>
           </a>
@@ -490,6 +490,19 @@
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
+  <!-- Resume Modal -->
+  <div id="resume-modal" class="resume-modal">
+    <div class="resume-modal-content">
+      <div class="resume-modal-header">
+        <a href="resume/resume.jpeg" download="Yugandhar_Bhambere_Resume.jpeg" class="btn btn-primary">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+        <span class="resume-modal-close" id="resume-modal-close">&times;</span>
+      </div>
+      <img src="resume/resume.jpeg" alt="Yugandhar Bhambere Resume" class="resume-modal-img">
+    </div>
+  </div>
+
   <!-- Interactive JavaScript Logic -->
   <script>
     // Theme Toggle Functionality
@@ -741,6 +754,30 @@
       requestAnimationFrame(animateParticles);
     }
     animateParticles();
+
+    // Resume Modal Controls
+    const resumeModal = document.getElementById('resume-modal');
+    const viewResumeBtn = document.getElementById('view-resume-btn');
+    const resumeModalClose = document.getElementById('resume-modal-close');
+    
+    if (viewResumeBtn && resumeModal && resumeModalClose) {
+      viewResumeBtn.addEventListener('click', () => {
+        resumeModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Stop background scroll
+      });
+      
+      resumeModalClose.addEventListener('click', () => {
+        resumeModal.classList.remove('active');
+        document.body.style.overflow = ''; // Re-enable background scroll
+      });
+      
+      resumeModal.addEventListener('click', (e) => {
+        if (e.target === resumeModal) {
+          resumeModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
   </script>
 </body>
 
